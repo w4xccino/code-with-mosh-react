@@ -13,7 +13,11 @@ class Counters extends Component {
     return (
       <div>
         {this.state.counters.map((counter) => (
-          <Counter key={counter.id} value={counter.value} />
+          <Counter key={counter.id} value={counter.value}>
+            {/* Acá estoy cerrando el componente manualmente y pasando un parámetro de
+            padre a hijo. 'Hello Motherfuckers' es el hijo, en este caso, el children. */}
+            <p>Hello Motherfuckers #{counter.id}</p>
+          </Counter>
         ))}
       </div>
     );
